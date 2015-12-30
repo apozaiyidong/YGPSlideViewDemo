@@ -1,3 +1,6 @@
+
+http://code4app.com/ios/567577dd594b90e97f8b47e4 //可看动画演示
+
 YGPSlideViewDemo
 在做新闻客户端 UIScrollView 重用展现较多的栏目比较常见
 简单的封装了下
