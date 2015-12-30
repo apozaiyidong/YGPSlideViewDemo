@@ -40,6 +40,14 @@
 - (YLSlideCell *)slideView:(YLSlideView *)slideView
      cellForRowAtIndex:(NSUInteger)index;
 
+/**
+ *  当 cell 初始化完成时调用
+ *  可以做预加载显示缓存数据
+ *
+ *  @param cell
+ *  @param index
+ */
+- (void)slideViewInitiatedComplete:(YLSlideCell*)cell forIndex:(NSUInteger)index;
 @optional
 
 /**

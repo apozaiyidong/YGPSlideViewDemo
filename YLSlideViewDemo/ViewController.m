@@ -72,7 +72,12 @@
     NSLog(@"刷新数据");
 }
 
+- (void)slideViewInitiatedComplete:(YLSlideCell *)cell forIndex:(NSUInteger)index{
 
+    //可以在这里做数据的预加载（缓存数据）
+    NSLog(@"缓存数据");
+//    [cell reloadData];
+}
 
 #pragma mark UITableViewDataSource
 

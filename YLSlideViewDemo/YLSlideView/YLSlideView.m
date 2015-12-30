@@ -78,8 +78,6 @@
             //保存偏移量
             [[YGPCache sharedManager]setDataToMemoryWithData:[NSStringFromCGPoint(cell.contentOffset) dataUsingEncoding:NSUTF8StringEncoding] forKey:[@(cell.index) stringValue]];
             
-//            [YLCache cacheScrollOffsetWithOffset:cell.contentOffset
-//                                             forIndex:cell.index];
             
             [_recycledCells addObject:cell];
             [cell removeFromSuperview];
@@ -146,6 +144,10 @@
 }
 
 - (void)configCellWithCell:(YLSlideCell*)cell forIndex:(NSUInteger)index{
+    
+    if ([_delegate respondsToSelector:@selector(slideViewInitiatedComplete:forIndex:)]) {
+        [_delegate slideViewInitiatedComplete:cell forIndex:index];
+    }
     
     cell.index            = index;
     CGRect cellFrame      = self.bounds;
