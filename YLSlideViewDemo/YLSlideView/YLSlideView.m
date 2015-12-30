@@ -76,7 +76,7 @@
         if (cell.index < currentPage || cell.index > nextPage) {
 
             //保存偏移量
-            [[YGPCache sharedManager]setDataToMemoryWithData:[YGPCache dataWithObject:NSStringFromCGPoint(cell.contentOffset)] forKey:[@(cell.index) stringValue]];
+            [[YGPCache sharedManager]setDataToMemoryWithData:[NSStringFromCGPoint(cell.contentOffset) dataUsingEncoding:NSUTF8StringEncoding] forKey:[@(cell.index) stringValue]];
             
 //            [YLCache cacheScrollOffsetWithOffset:cell.contentOffset
 //                                             forIndex:cell.index];
@@ -160,7 +160,7 @@
     [[YGPCache sharedManager] dataFromMemoryForKey:[@(cell.index) stringValue] block:^(NSData *data, NSString *key) {
         
         if (data) {
-            CGPoint offset = CGPointFromString([YGPCache objectWithData:data]);
+            CGPoint offset = CGPointFromString([[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
             [newCell setContentOffset:offset];
         }
     }];
