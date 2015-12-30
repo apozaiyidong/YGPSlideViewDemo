@@ -88,7 +88,7 @@
     [_visibleCells minusSet:_recycledCells];
     
     // 添加重用Cell
-    for (NSUInteger index = currentPage ; index <= nextPage; index++) {
+    for (NSUInteger index = currentPage ; index < nextPage; index++) {
         
         if (![self isVisibleCellForIndex:index]) {
         
@@ -220,7 +220,6 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
     
     [self slideViewRecycle];
 

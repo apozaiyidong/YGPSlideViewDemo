@@ -69,15 +69,16 @@
     return cell;
 }
 - (void)slideVisibleView:(YLSlideCell *)cell forIndex:(NSUInteger)index{
-    NSLog(@"index :%@  cell %@",@(index),cell);
+    
+    NSLog(@"index :%@ ",@(index));
     [cell reloadData]; //刷新TableView
-    NSLog(@"刷新数据");
+//    NSLog(@"刷新数据");
 }
 
 - (void)slideViewInitiatedComplete:(YLSlideCell *)cell forIndex:(NSUInteger)index{
 
     //可以在这里做数据的预加载（缓存数据）
-    NSLog(@"缓存数据");
+//    NSLog(@"缓存数据");
 //    [cell reloadData];
 }
 

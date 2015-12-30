@@ -99,7 +99,11 @@ typedef void(^YGPCacheDataCacheImageBlock)(UIImage *image,NSString *key);
 //对象转成NSData
 + (NSData*)dataWithJSONObject:(id)object;
 + (id)JSONObjectWithData:(NSData*)data;
+
 + (NSData*)dataWithImageObject:(UIImage*)image;
+
++ (NSData*)dataWithString:(NSString*)string;
++ (NSString*)stringWithData:(NSData*)data;
 
 @end
 

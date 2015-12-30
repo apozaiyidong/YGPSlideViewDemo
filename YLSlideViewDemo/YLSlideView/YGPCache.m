@@ -345,31 +345,6 @@ static inline NSString *unescapedString(NSString *key){
     
     return fileCount;
 }
-+ (NSData*)dataWithJSONObject:(id)object{
-    
-    
-    NSData *data = [NSJSONSerialization dataWithJSONObject:object
-                                                   options:NSJSONWritingPrettyPrinted
-                                                     error:nil];
-    
-    return data;
-}
-
-+ (id)JSONObjectWithData:(NSData*)data{
-    id JSONObj = [NSJSONSerialization JSONObjectWithData:data
-                                                 options:kNilOptions
-                                                   error:nil];
-    
-    return JSONObj;
-}
-+ (NSData*)dataWithImageObject:(UIImage*)image{
-    
-    NSData *data = nil;
-    data = UIImageJPEGRepresentation(image, [@(1.0) floatValue]);
-    //        data = UIImagePNGRepresentation(image);
-    return data;
-}
-
 
 #pragma mark TimeoutList
 
@@ -441,6 +416,40 @@ static inline NSString *unescapedString(NSString *key){
                                                               error:nil];
     
     [cacheListData writeToFile:[self ygp_filePathWithKey:YGPCacheAttributeListName] atomically:YES];
+}
+
+#pragma mark 
++ (NSData*)dataWithJSONObject:(id)object{
+    
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:object
+                                                   options:NSJSONWritingPrettyPrinted
+                                                     error:nil];
+    
+    return data;
+}
+
++ (id)JSONObjectWithData:(NSData*)data{
+    id JSONObj = [NSJSONSerialization JSONObjectWithData:data
+                                                 options:kNilOptions
+                                                   error:nil];
+    
+    return JSONObj;
+}
++ (NSData*)dataWithImageObject:(UIImage*)image{
+    
+    NSData *data = nil;
+    data = UIImageJPEGRepresentation(image, [@(1.0) floatValue]);
+    //        data = UIImagePNGRepresentation(image);
+    return data;
+}
+
++ (NSString*)stringWithData:(NSData *)data{
+    return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+}
+
++ (NSData*)dataWithString:(NSString *)string{
+    return [string dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end
