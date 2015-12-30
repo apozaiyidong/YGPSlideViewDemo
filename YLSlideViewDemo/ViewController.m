@@ -3,6 +3,7 @@
 #import "YLSlideView/YLSlideView.h"
 #import "YLSlideConfig.h"
 #import "YLSlideView/YLSlideCell.h"
+#import "YGPCache.h"
 
 @interface ViewController ()<YLSlideViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
@@ -20,6 +21,7 @@
     
     self.title = @"新闻客户端ScrollView重用";
     
+
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars =NO;
     self.modalPresentationCapturesStatusBarAppearance =NO;
