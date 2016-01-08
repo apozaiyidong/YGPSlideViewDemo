@@ -21,12 +21,11 @@
     
     self.title = @"新闻客户端ScrollView重用";
     
-
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars =NO;
     self.modalPresentationCapturesStatusBarAppearance =NO;
     self.navigationController.navigationBar.translucent =NO;
-
+    
     colors = @[[UIColor redColor],[UIColor yellowColor],[UIColor blackColor],[UIColor redColor],[UIColor yellowColor],[UIColor blackColor],[UIColor redColor],[UIColor yellowColor],[UIColor blackColor]];
     
     _slideView = [[YLSlideView alloc]initWithFrame:CGRectMake(0, 0,
@@ -45,6 +44,7 @@
     _slideView.backgroundColor = [UIColor whiteColor];
     _slideView.delegate        = self;
     [self.view addSubview:_slideView];
+    
 }
 
 - (NSInteger)columnNumber{
@@ -78,8 +78,12 @@
 - (void)slideViewInitiatedComplete:(YLSlideCell *)cell forIndex:(NSUInteger)index{
 
     //可以在这里做数据的预加载（缓存数据）
-//    NSLog(@"缓存数据");
-//    [cell reloadData];
+    NSLog(@"缓存数据 %@",cell);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [cell reloadData];
+
+    });
 }
 
 #pragma mark UITableViewDataSource

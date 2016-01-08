@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		189A74671C30D1D600AC9D9B /* YGPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A74661C30D1D600AC9D9B /* YGPCache.m */; };
+		18B6DDCF1C3F4EC100153E88 /* get.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B6DDCE1C3F4EC100153E88 /* get.png */; };
+		18B6DDD21C3F4F1100153E88 /* YGPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6DDD11C3F4F1100153E88 /* YGPCache.m */; };
+		18B6DDD51C3F501600153E88 /* YGPCacheDisk.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6DDD41C3F501600153E88 /* YGPCacheDisk.m */; };
+		18B6DDD81C3F52E500153E88 /* YGPCacheMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6DDD71C3F52E500153E88 /* YGPCacheMemory.m */; };
 		59F2E1621C20677800D5E078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2E1611C20677800D5E078 /* main.m */; };
 		59F2E1651C20677800D5E078 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2E1641C20677800D5E078 /* AppDelegate.m */; };
 		59F2E1681C20677800D5E078 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2E1671C20677800D5E078 /* ViewController.m */; };
@@ -39,8 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		189A74651C30D1D600AC9D9B /* YGPCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPCache.h; sourceTree = "<group>"; };
-		189A74661C30D1D600AC9D9B /* YGPCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPCache.m; sourceTree = "<group>"; };
+		18B6DDCE1C3F4EC100153E88 /* get.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = get.png; sourceTree = "<group>"; };
+		18B6DDD01C3F4F1100153E88 /* YGPCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGPCache.h; path = YLSlideView/YGPCache.h; sourceTree = "<group>"; };
+		18B6DDD11C3F4F1100153E88 /* YGPCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGPCache.m; path = YLSlideView/YGPCache.m; sourceTree = "<group>"; };
+		18B6DDD31C3F501600153E88 /* YGPCacheDisk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGPCacheDisk.h; path = YLSlideView/YGPCacheDisk.h; sourceTree = "<group>"; };
+		18B6DDD41C3F501600153E88 /* YGPCacheDisk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGPCacheDisk.m; path = YLSlideView/YGPCacheDisk.m; sourceTree = "<group>"; };
+		18B6DDD61C3F52E500153E88 /* YGPCacheMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGPCacheMemory.h; path = YLSlideView/YGPCacheMemory.h; sourceTree = "<group>"; };
+		18B6DDD71C3F52E500153E88 /* YGPCacheMemory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YGPCacheMemory.m; path = YLSlideView/YGPCacheMemory.m; sourceTree = "<group>"; };
 		59F2E15D1C20677800D5E078 /* YLSlideViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YLSlideViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F2E1611C20677800D5E078 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59F2E1631C20677800D5E078 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +99,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18B6DDD91C3F6A2D00153E88 /* YGPCache */ = {
+			isa = PBXGroup;
+			children = (
+				18B6DDD01C3F4F1100153E88 /* YGPCache.h */,
+				18B6DDD11C3F4F1100153E88 /* YGPCache.m */,
+				18B6DDD31C3F501600153E88 /* YGPCacheDisk.h */,
+				18B6DDD41C3F501600153E88 /* YGPCacheDisk.m */,
+				18B6DDD61C3F52E500153E88 /* YGPCacheMemory.h */,
+				18B6DDD71C3F52E500153E88 /* YGPCacheMemory.m */,
+			);
+			name = YGPCache;
+			sourceTree = "<group>";
+		};
 		59F2E1541C20677800D5E078 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +135,7 @@
 		59F2E15F1C20677800D5E078 /* YLSlideViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				18B6DDD91C3F6A2D00153E88 /* YGPCache */,
 				59F2E1931C20678D00D5E078 /* YLSlideView */,
 				59F2E1631C20677800D5E078 /* AppDelegate.h */,
 				59F2E1641C20677800D5E078 /* AppDelegate.m */,
@@ -157,8 +179,7 @@
 		59F2E1931C20678D00D5E078 /* YLSlideView */ = {
 			isa = PBXGroup;
 			children = (
-				189A74651C30D1D600AC9D9B /* YGPCache.h */,
-				189A74661C30D1D600AC9D9B /* YGPCache.m */,
+				18B6DDCE1C3F4EC100153E88 /* get.png */,
 				59F2E19E1C20697200D5E078 /* YLSlideView.h */,
 				59F2E19F1C20697200D5E078 /* YLSlideView.m */,
 				59F2E1941C2067DF00D5E078 /* YLSlideTitleView.h */,
@@ -275,6 +296,7 @@
 			files = (
 				59F2E1701C20677800D5E078 /* LaunchScreen.storyboard in Resources */,
 				59F2E16D1C20677800D5E078 /* Assets.xcassets in Resources */,
+				18B6DDCF1C3F4EC100153E88 /* get.png in Resources */,
 				59F2E16B1C20677800D5E078 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,11 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B6DDD51C3F501600153E88 /* YGPCacheDisk.m in Sources */,
 				59F2E1681C20677800D5E078 /* ViewController.m in Sources */,
 				59F2E1961C2067DF00D5E078 /* YLSlideTitleView.m in Sources */,
+				18B6DDD81C3F52E500153E88 /* YGPCacheMemory.m in Sources */,
 				59F2E19C1C20680D00D5E078 /* YLSlideCell.m in Sources */,
 				59F2E1A01C20697200D5E078 /* YLSlideView.m in Sources */,
-				189A74671C30D1D600AC9D9B /* YGPCache.m in Sources */,
+				18B6DDD21C3F4F1100153E88 /* YGPCache.m in Sources */,
 				59F2E1651C20677800D5E078 /* AppDelegate.m in Sources */,
 				59F2E1621C20677800D5E078 /* main.m in Sources */,
 			);

@@ -1,6 +1,5 @@
 
 /*
-   在使用中存在任何问题可联系本人QQ:286677411。
  
    YLSlideView 是 UIScrollView 的一个重用视图，新闻类型客户端比较常见这种做法
    YLSlideCell

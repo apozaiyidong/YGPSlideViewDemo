@@ -76,7 +76,7 @@
         if (cell.index < currentPage || cell.index > nextPage) {
 
             //保存偏移量
-            [[YGPCache sharedManager]setDataToMemoryWithData:[NSStringFromCGPoint(cell.contentOffset) dataUsingEncoding:NSUTF8StringEncoding] forKey:[@(cell.index) stringValue]];
+            [[YGPCache sharedCache]setDataToMemoryWithData:[NSStringFromCGPoint(cell.contentOffset) dataUsingEncoding:NSUTF8StringEncoding] forKey:[@(cell.index) stringValue]];
             
             
             [_recycledCells addObject:cell];
@@ -88,7 +88,7 @@
     [_visibleCells minusSet:_recycledCells];
     
     // 添加重用Cell
-    for (NSUInteger index = currentPage ; index < nextPage; index++) {
+    for (NSUInteger index = currentPage ; index <= nextPage; index++) {
         
         if (![self isVisibleCellForIndex:index]) {
         
@@ -145,10 +145,6 @@
 
 - (void)configCellWithCell:(YLSlideCell*)cell forIndex:(NSUInteger)index{
     
-    if ([_delegate respondsToSelector:@selector(slideViewInitiatedComplete:forIndex:)]) {
-        [_delegate slideViewInitiatedComplete:cell forIndex:index];
-    }
-    
     cell.index            = index;
     CGRect cellFrame      = self.bounds;
     cellFrame.origin.x    = CGRectGetWidth(self.frame)*index;
@@ -157,9 +153,13 @@
     [cell setFrame:cellFrame];
     [_mainScrollview addSubview:cell];
     
+    if ([_delegate respondsToSelector:@selector(slideViewInitiatedComplete:forIndex:)]) {
+        [_delegate slideViewInitiatedComplete:cell forIndex:index];
+    }
+    
     //获取偏移量
    __block YLSlideCell *newCell = cell;
-    [[YGPCache sharedManager] dataFromMemoryForKey:[@(cell.index) stringValue] block:^(NSData *data, NSString *key) {
+    [[YGPCache sharedCache] dataForKey:[@(cell.index) stringValue] block:^(NSData *data, NSString *key) {
         
         if (data) {
             CGPoint offset = CGPointFromString([[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
@@ -176,7 +176,7 @@
     [_visibleCells  removeAllObjects];
     [_recycledCells removeAllObjects];
     
-    [[YGPCache sharedManager]removeMemoryAllData];
+    [[YGPCache sharedCache]removeMemoryAllData];
     
     __WEAK_SELF_YLSLIDE
     
