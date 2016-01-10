@@ -32,7 +32,7 @@
     if (self) {
         
         _titles  = [titles copy];
-        _prePageIndex = 0;
+        _prePageIndex = 1000;
         [self configSlideView];
         
         //监听Delegate值改变以刷新数据，不想使用者做太多无谓的方法调用
@@ -97,8 +97,6 @@
             
             [_visibleCells addObject:cell];
             
-            [self visibleViewDelegateForIndex:index];
-
         }
     }
 }
@@ -195,9 +193,8 @@
 
     [self slideViewRecycle];
     
-    if ([_delegate respondsToSelector:@selector(slideVisibleView:forIndex:)]) {
-        [_delegate slideVisibleView:[self visibleCellForIndex:0] forIndex:0];
-    }
+    [self visibleViewDelegateForIndex:0];
+
 
 }
 
@@ -228,12 +225,16 @@
             _slideTitleView.slideTitleViewScrollBlock(scrollView.contentOffset.x);
         }
     }
-
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
+    CGFloat pageWidth = scrollView.frame.size.width;
+    // 根据当前的x坐标和页宽度计算出当前页数
+    int currentPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     
+    [self visibleViewDelegateForIndex:currentPage];
+
     if (_slideTitleView.slideViewWillScrollEndBlock) {
         _slideTitleView.slideViewWillScrollEndBlock(scrollView.contentOffset.x);
     }
